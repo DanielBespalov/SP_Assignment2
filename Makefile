@@ -19,4 +19,4 @@ my_Knapsack.o: my_Knapsack.c
 
 .PHONY: clean
 clean:
-	rm -f *.o *.a *.so connections
+	rm -f *.o *.a *.so connections my_Knapsack
