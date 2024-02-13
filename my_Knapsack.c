@@ -57,10 +57,8 @@ for (i = 0; i < MAX_ITEMS; i++) {
     if (selected_bool[i]) {
         printf("%c", items[i]); // Print the item
         selected_count++;
-        if (selected_count < maxProfit) {
+        if (selected_count < maxProfit && i < MAX_ITEMS - 1 && selected_bool[i+1]) {
             printf(" "); // Add space only if there are more selected items
-        } else {
-            break; // Exit loop when the last selected item is printed
         }
     }
 }
