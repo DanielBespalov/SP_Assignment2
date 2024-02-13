@@ -41,7 +41,7 @@ int main() {
     int weights[MAX_ITEMS], values[MAX_ITEMS], selected_bool[MAX_ITEMS];
     int i;
 
-    printf("Enter the items, values, and weights (e.g., a 35 2):\n");
+
     for (i = 0; i < MAX_ITEMS; i++) {
         // To consume any newline or space before the character
         scanf(" %c", &items[i]);
