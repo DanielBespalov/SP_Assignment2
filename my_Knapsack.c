@@ -60,7 +60,6 @@ for (i = 0; i < MAX_ITEMS; i++) {
         }
     }
 }
-printf("\n");
 
 
     return 0;
