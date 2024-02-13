@@ -24,13 +24,14 @@ int knapSack(int weights[], int values[], int selected_bool[]) {
     int result = K[MAX_ITEMS][MAX_WEIGHT];
     w = MAX_WEIGHT;
     for (i = 0; i < MAX_ITEMS; i++) selected_bool[i] = 0;
-    for (i = MAX_ITEMS; i > 0 && result > 0; i--) {
-        if (result != K[i - 1][w]) {
-            selected_bool[i - 1] = 1;
-            result -= values[i - 1];
-            w -= weights[i - 1];
-        }
+for (i = MAX_ITEMS - 1; i >= 0 && result > 0; i--) {
+    if (result != K[i][w]) {
+        selected_bool[i] = 1;
+        result -= values[i];
+        w -= weights[i];
     }
+}
+
 
     return K[MAX_ITEMS][MAX_WEIGHT];
 }
@@ -50,13 +51,17 @@ int main() {
 
     int maxProfit = knapSack(weights, values, selected_bool);
 
-    printf("Maximum profit: %d\nSelected items: ", maxProfit);
-    for (i = 0; i < MAX_ITEMS; i++) {
-        if (selected_bool[i]) {
-            printf("%c ", items[i]);
+printf("Maximum profit: %d\nSelected items: ", maxProfit);
+for (i = 0; i < MAX_ITEMS; i++) {
+    if (selected_bool[i]) {
+        printf("%c", items[i]); // Print the item
+        if (i < MAX_ITEMS - 1) {
+            printf(" "); // Add space only if there are more selected items
         }
     }
-    printf("\n");
+}
+printf("\n");
+
 
     return 0;
 }
