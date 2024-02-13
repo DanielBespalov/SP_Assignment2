@@ -52,15 +52,18 @@ int main() {
     int maxProfit = knapSack(weights, values, selected_bool);
 
 printf("Maximum profit: %d\nSelected items: ", maxProfit);
+int selected_count = 0; // Counter to track the number of selected items
 for (i = 0; i < MAX_ITEMS; i++) {
     if (selected_bool[i]) {
         printf("%c", items[i]); // Print the item
-        if (i < MAX_ITEMS - 1) {
+        selected_count++;
+        if (selected_count < maxProfit) {
             printf(" "); // Add space only if there are more selected items
+        } else {
+            break; // Exit loop when the last selected item is printed
         }
     }
 }
-
 
     return 0;
 }
