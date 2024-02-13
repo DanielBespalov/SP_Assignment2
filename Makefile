@@ -21,4 +21,4 @@ my_Knapsack.o: my_Knapsack.c
 
 
 clean:
-	rm -f *.o *.a *.so my_graph my_Knapsack
+	rm -f *.h.gch *.o *.a *.so my_graph my_Knapsack
