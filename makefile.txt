@@ -1,0 +1,14 @@
+CC=gcc
+FLAGS= -Wall -g
+
+all: connections
+connections: graph_m.o my_mat.o
+	$(CC) $(FLAGS) graph_m.o my_mat.o -o connections
+graph_m.o: graph_m.c
+	$(CC) $(FLAGS) -c graph_m.c
+my_mat.o: my_mat.c my_mat.h
+	$(CC) $(FLAGS) -c my_mat.c
+
+.PHONY: clean
+clean:
+	rm -f *.o *.a *.so connections
